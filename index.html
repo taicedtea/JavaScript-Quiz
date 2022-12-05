@@ -19,22 +19,39 @@
         </div>
       </nav>
       <div class="container">
+        <!-- starting card and all questions -->
         <div class="row">
-            <div class="col m-auto card text-center mt-4 col-8">
-                <div class="card-header">
-                    Start of Quiz
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Press the "Start" button below to begin!</h5>
-                    <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
-                    <a href="#" class="btn btn-success">Start</a>
-                </div>
-                <!-- <div class="card-footer text-muted">
-                    2 days ago
-                </div> -->
+          <!-- Starting Card -->
+          <div class="col m-auto card text-center mt-4 col-8" id="introCard">
+            <div class="card-header fs-5">
+              Press the "Start" button below to begin!
             </div>
+            <div class="card-body">
+              <a href="#" class="btn btn-success">Start</a>
+            </div>
+          </div>
+          <!-- First question -->
+          <div class="col m-auto card text-center mt-4 col-8" id="introCard">
+            <div class="card-header fs-5">
+                Arrays in JavaScript can be used to store:
+            </div>
+            <div class="card-body">
+              <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action" data-answer="incorrect">1. Numbers and Strings</a>
+                <a href="#" class="list-group-item list-group-item-action" data-answer="incorrect">2. Boolean</a>
+                <a href="#" class="list-group-item list-group-item-action" data-answer="incorrect">3. Other Arrays</a>
+                <a class="list-group-item list-group-item-action disabled" data-answer="correct">4. All of the Above</a>
+              </div>
+              <a href="#" class="btn btn-success m-2">Submit</a>
+            </div>
+            <div class="card-footer text-success">
+                Correct!
+            </div>
+            <div class="card-footer text-danger">
+                Wrong!
+            </div>
+          </div>
         </div>
-        
       </div>
       
 
