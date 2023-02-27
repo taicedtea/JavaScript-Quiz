@@ -11,48 +11,34 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand text-white ps-2 fs-4" href="#">JavaScript Quiz</a>
+          <a class="navbar-brand text-white ps-2 fs-8" href="#">View High Scores</a>
+          <h1 class="navbar-brand text-white ps-2 fs-4" href="#">JavaScript Quiz</h1>
             <span class="navbar-text text-white pe-5 fs-4" id="timer">
               00:00
             </span>
           </div>
         </div>
-      </nav>
-      <div class="container">
-        <!-- starting card and all questions -->
-        <div class="row">
-          <!-- Starting Card -->
-          <div class="col m-auto card text-center mt-4 col-8" id="introCard">
-            <div class="card-header fs-5">
-              Press the "Start" button below to begin!
-            </div>
-            <div class="card-body">
-              <a href="#" class="btn btn-success">Start</a>
-            </div>
-          </div>
-          <!-- First question -->
-          <div class="col m-auto card text-center mt-4 col-8" id="introCard">
-            <div class="card-header fs-5">
-                Arrays in JavaScript can be used to store:
-            </div>
-            <div class="card-body">
-              <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action" data-answer="incorrect">1. Numbers and Strings</a>
-                <a href="#" class="list-group-item list-group-item-action" data-answer="incorrect">2. Boolean</a>
-                <a href="#" class="list-group-item list-group-item-action" data-answer="incorrect">3. Other Arrays</a>
-                <a class="list-group-item list-group-item-action disabled" data-answer="correct">4. All of the Above</a>
-              </div>
-              <a href="#" class="btn btn-success m-2">Submit</a>
-            </div>
-            <div class="card-footer text-success">
-                Correct!
-            </div>
-            <div class="card-footer text-danger">
-                Wrong!
-            </div>
+    </nav>
+    <div class="container">
+      <!-- starting card and all questions -->
+      <div class="row">
+        <!-- Starting Card -->
+        <div class="col m-auto card text-center mt-4 col-8" id="introCard">
+          <h2 class="card-header fs-5" id="startGame">
+            Press the "Start" button below to begin!
+          </h2>
+          <div class="card-body">
+            <a href="#" class="btn btn-success">Start</a>
           </div>
         </div>
+        <div class="card-footer text-success">
+            Correct!
+        </div>
+        <div class="card-footer text-danger">
+            Wrong!
+        </div>
       </div>
+    </div>
       
 
     
