@@ -25,4 +25,19 @@ let quizQuestions = [
         choices:["Number and Strings", "Other Arrays", "Booleans", "All of the Above"],
         answer:"All of the Above",
     },
+    {
+        question: "String values must be enclosed in ______.",
+        choices:["Commas", "Curly Brackets", "Quotes", "Parenthesis"],
+        answer:"Quotes",
+    },
+    {
+        question: "A very useful tool used during development and debugging for printing content to the debugger is:",
+        choices:["terminal/bash", "for loops", "console.log", "Javascript"],
+        answer:"console.log",
+    },
+    {
+        question: "Upon encountering empty statements, what does the Javascript Interpreter do?",
+        choices:["Throws an error", "Ignores the statements", "Gives a warning", "None of the above"],
+        answer:"Ignores the statements",
+    },
 ]
