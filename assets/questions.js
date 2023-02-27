@@ -41,3 +41,5 @@ let quizQuestions = [
         answer:"Ignores the statements",
     },
 ]
+
+export {quizQuestions};
