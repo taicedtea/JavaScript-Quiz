@@ -10,6 +10,8 @@ let questionBox = document.querySelector('#questionBox');
 let question = document.querySelector('#question');
 let answerList = document.querySelector('#answerList');
 let endBox = document.querySelector('#endBox');
+let correct = document.querySelector('#correct');
+let incorrect = document.querySelector('#incorrect');
 let playerScore = document.querySelector('#playerScore');
 
 //gives startBtn functionality
@@ -20,9 +22,11 @@ function startGame() {
     playerScore = 0; //makes sure score starts at 0
     newQuestions();
     countDown();
+    checkAnwer();
+    playerScore++; // clicking starts gives negative score, this sets score back to 0
 }
 
-//thank you Mikhail on stackoverflow
+//thank you Mikhail on stackoverflow, this is for the countdown timer
 function countDown(){
     var sec = 45;
     setInterval(function(){
@@ -40,9 +44,31 @@ var i = 0 //to set question to first in index
 function newQuestions() {
     question.innerHTML = quizQuestions[i].question;
     answerList.innerHTML = 
-        `<li>1. ${quizQuestions[i].choices[0]}</li>
-        <li>2. ${quizQuestions[i].choices[1]}</li>
-        <li>3. ${quizQuestions[i].choices[2]}</li>
-        <li>4. ${quizQuestions[i].choices[3]}</li>` 
+        `<li>${quizQuestions[i].choices[0]}</li>
+        <li>${quizQuestions[i].choices[1]}</li>
+        <li>${quizQuestions[i].choices[2]}</li>
+        <li>${quizQuestions[i].choices[3]}</li>`
 }
+
+//function to check if chosen answer is correct or incorrect
+function checkAnwer() {
+    //gives element user clicked, thanks alex on stackoverflow
+    document.addEventListener('click', function(e) {
+        e = e || window.event;
+        var target = e.target || e.srcElement,
+        clickedAnswer = target.textContent || target.innerText;
+        console.log(clickedAnswer)
+        //compares clicked element to correct answer
+        if (clickedAnswer == quizQuestions[i].answer) {
+            console.log("correct");
+            playerScore++;
+        } else {
+            console.log("incorrect");
+            playerScore--;
+        }
+        console.log(playerScore);
+    }, false);
+}
+
+
 
