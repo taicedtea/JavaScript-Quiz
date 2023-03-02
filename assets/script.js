@@ -19,9 +19,13 @@ let highScoreBox = document.querySelector('#highScoreBox');
 let highScoreList = document.querySelector('#highScoreList');
 
 let score = 0;
+var i = 0 //to set question to first in index
+
 //gives startBtn functionality
 startBtn.addEventListener('click', startGame);
 function startGame() {
+    i = 0;
+    score = 0;
     infoBox.style.display = 'none';
     questionBox.style.display = 'block';
     newQuestions();
@@ -29,19 +33,28 @@ function startGame() {
     checkAnswer();
 }
 
+// runs when timer is out or questions are done
+function gameOver() {
+    console.log('done');
+    questionBox.style.display = "none";
+    endBox.style.display = "block";
+    playerScore.innerHTML = `Your score is: ${score}!`;
+    i = 0;
+    sec = 45;
+}
+
 //thank you Mikhail on stackoverflow, this is for the countdown timer
-var sec = 45;
+var sec = 20;
 function countDown(){
     setInterval(function(){
         timer.innerHTML='00:'+sec;
         sec--;
         if (sec < 0) {
             clearInterval(timer);
+            gameOver();
         }
     }, 1000);
 }
-
-var i = 0 //to set question to first in index
 
 // populates question box
 function newQuestions() {
@@ -53,10 +66,7 @@ function newQuestions() {
         <li>${quizQuestions[i].choices[2]}</li>
         <li>${quizQuestions[i].choices[3]}</li>`
     } else {
-        console.log('done');
-        questionBox.style.display = "none";
-        endBox.style.display = "block";
-        playerScore.innerHTML = `Your score is: ${score}!`;
+        gameOver();
     }
 }
 
@@ -93,23 +103,39 @@ function checkAnswer() {
 // Allows player to submit score
 submitScore.addEventListener('click', newScore);
 function newScore() {
+    sec = 45;
+    i = 0;
+    newQuestions();
+    //adds highscore to element
     let name = document.getElementById('playerName').value;
     let node = document.createElement("li");
     node.innerHTML = (`<li>${name}: ${score}</li>`);
     highScoreList.appendChild(node);
     highScoreBox.style.display = "block";
-    i = 0;
+    //alerts user that score was saved
+    alert("Score saved! Click\"View High Score\" to View!");
+    highScoreBox.style.display = "block";
     score = 0;
+    console.log("i new: ", i);
+    console.log("score new: ",score);
 }
 
 // Play again function
 playAgain.addEventListener('click', newGame);
 function newGame() {
-    i = 0;
     score = 0;
-    endBox.style.display = 'none';
-    questionBox.style.display = 'block';
+    sec = 45;
+    i = 0;
     newQuestions();
-    countDown();
-    checkAnswer();
+    endBox.style.display = "none";
+    highScoreBox.style.display = "none";
+    correct.style.display = "none";
+    incorrect.style.display = "none";
+    questionBox.style.display = "block";
+}
+
+//view high scores
+highScoreBtn.addEventListener('click', viewHighScores);
+function viewHighScores() {
+    highScoreBox.style.display = "block";
 }
