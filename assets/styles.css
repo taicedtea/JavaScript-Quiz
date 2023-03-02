@@ -13,3 +13,7 @@ ul {
 #correct, #incorrect {
     display: none;
 }
+
+#highScoreBox {
+    display: none;
+}

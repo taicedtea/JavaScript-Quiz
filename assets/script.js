@@ -13,6 +13,10 @@ let endBox = document.querySelector('#endBox');
 let correct = document.querySelector('#correct');
 let incorrect = document.querySelector('#incorrect');
 let playerScore = document.querySelector('#playerScore');
+let submitScore = document.querySelector('#submitScore');
+let playAgain = document.querySelector('#playAgain');
+let highScoreBox = document.querySelector('#highScoreBox');
+let highScoreList = document.querySelector('#highScoreList');
 
 let score = 0;
 //gives startBtn functionality
@@ -84,4 +88,28 @@ function checkAnswer() {
         console.log("score: ",score);
         console.log("i: ", i);
     }, true);
+}
+
+// Allows player to submit score
+submitScore.addEventListener('click', newScore);
+function newScore() {
+    let name = document.getElementById('playerName').value;
+    let node = document.createElement("li");
+    node.innerHTML = (`<li>${name}: ${score}</li>`);
+    highScoreList.appendChild(node);
+    highScoreBox.style.display = "block";
+    i = 0;
+    score = 0;
+}
+
+// Play again function
+playAgain.addEventListener('click', newGame);
+function newGame() {
+    i = 0;
+    score = 0;
+    endBox.style.display = 'none';
+    questionBox.style.display = 'block';
+    newQuestions();
+    countDown();
+    checkAnswer();
 }
