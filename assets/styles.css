@@ -9,3 +9,7 @@ ul {
 #endBox {
     display: none;
 }
+
+#correct, #incorrect {
+    display: none;
+}
