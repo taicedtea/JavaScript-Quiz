@@ -3,7 +3,7 @@ import { quizQuestions } from "./questions.js";
 
 // Assign variables
 let timer = document.querySelector('#timer');
-let highScoreBtn = document.querySelector('#startBtn');
+let highScoreBtn = document.querySelector('#highScoreBtn');
 let infoBox = document.querySelector('#infoBox');
 let startBtn = document.querySelector('#startBtn');
 let questionBox = document.querySelector('#questionBox');
@@ -26,8 +26,9 @@ startBtn.addEventListener('click', startGame);
 function startGame() {
     i = 0;
     score = 0;
-    infoBox.style.display = 'none';
-    questionBox.style.display = 'block';
+    infoBox.style.display = "none";
+    questionBox.style.display = "block";
+    highScoreBox.style.display= "none";
     newQuestions();
     countDown();
     checkAnswer();
@@ -44,7 +45,7 @@ function gameOver() {
 }
 
 //thank you Mikhail on stackoverflow, this is for the countdown timer
-var sec = 20;
+var sec = 45;
 function countDown(){
     setInterval(function(){
         timer.innerHTML='00:'+sec;
@@ -135,7 +136,6 @@ function newGame() {
 }
 
 //view high scores
-highScoreBtn.addEventListener('click', viewHighScores);
-function viewHighScores() {
+highScoreBtn.addEventListener('click', function() {
     highScoreBox.style.display = "block";
-}
+});

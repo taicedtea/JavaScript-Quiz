@@ -11,9 +11,8 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-dark">
         <div class="container-fluid">
-          <p class="navbar-brand text-white ps-2 fs-8" id="highScoreBtn">View High Scores</p>
-          <a href="/" class="navbar-brand text-white ps-2 fs-4">JavaScript Quiz</a>
-          </div>
+          <p href="" class="navbar-brand text-white fs-4">JavaScript Quiz</p>
+          <p class="navbar-brand text-white" id="highScoreBtn">View High Scores</p>
         </div>
     </nav>
     <div class="container">
@@ -56,8 +55,8 @@
           <input type="text" id="playerName" name="playerName">
           <button type="button" class="btn btn-success mt-2 mb-2 w-25 align-self-center" id="submitScore">submit</button>
           <!-- ask to play again -->
-          <p>Want to play again?</p>
-          <button type="button" class="btn btn-primary mt-1 mb-2 w-25 align-self-center" id="playAgain">Play Again!</button>
+          <p class="mt-2">Want to play again?</p>
+          <button type="button" class="btn btn-primary mb-2 w-25 align-self-center" id="playAgain">Play Again!</button>
         </div>
       </div>
       <!-- high score box -->
@@ -65,7 +64,7 @@
         <div class="col m-auto card text-left mt-4 col-8">
           <p class="card-header fs-5 fw-bold text-center">High Scores:
           </p>
-          <ul id="highScoreList"></ul>
+          <ul id="highScoreList" class="text-center"></ul>
         </div>
       </div>
     </div>
