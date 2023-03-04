@@ -11,7 +11,7 @@ ul {
 }
 
 #correct, #incorrect {
-    display: none;
+    display: block;
 }
 
 #highScoreBox {
